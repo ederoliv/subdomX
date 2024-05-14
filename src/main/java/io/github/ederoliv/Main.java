@@ -7,9 +7,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-        // Substitua "API_KEY" pela sua chave de API real
-        String apiKey = "API_KEY";
-        String domainName = "google.com";
+
+        String apiKey = "at_WeQUOMyxeWSqHMskVkODCobqegrYc";
+        String domainName = "uniftec.com.br";
 
         String url = "https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=" + apiKey + "&domainName=" + domainName;
 
