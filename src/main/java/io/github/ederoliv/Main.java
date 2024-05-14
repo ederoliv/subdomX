@@ -6,21 +6,22 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
 
+    //at_WeQUOMyxeWSqHMskVkODCobqegrYc uniftec.com.br
+    public static void main(String[] args) throws IOException, InterruptedException {
+        // Replace "API_KEY" with your actual Whois XML API key
         String apiKey = "at_WeQUOMyxeWSqHMskVkODCobqegrYc";
         String domainName = "uniftec.com.br";
 
-        String url = "https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=" + apiKey + "&domainName=" + domainName;
+        String url = "https://subdomains.whoisxmlapi.com/api/v1?apiKey=" + apiKey + "&domainName=" + domainName;
 
         HttpClient httpClient = HttpClient.newHttpClient();
 
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
-                    .method("GET")
+                    .GET()
                     .build();
-
 
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -29,6 +30,10 @@ public class Main {
                 String body = response.body();
                 System.out.println("Requisição bem-sucedida!");
                 System.out.println("Resposta XML: " + body);
+
+
+
+
             } else {
                 System.out.println("Falha na requisição: " + statusCode);
                 System.out.println("Corpo da resposta: " + response.body());
