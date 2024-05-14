@@ -5,13 +5,20 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Scanner;
+
+
 public class Main {
 
     //at_WeQUOMyxeWSqHMskVkODCobqegrYc uniftec.com.br
     public static void main(String[] args) throws IOException, InterruptedException {
-        // Replace "API_KEY" with your actual Whois XML API key
+
         String apiKey = "at_WeQUOMyxeWSqHMskVkODCobqegrYc";
-        String domainName = "uniftec.com.br";
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o dominio que deseja pesquisar");
+        String domainName = scanner.nextLine();
 
         String url = "https://subdomains.whoisxmlapi.com/api/v1?apiKey=" + apiKey + "&domainName=" + domainName;
 
